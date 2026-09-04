@@ -1,0 +1,151 @@
+// Curated brand assets and photos for HipKids Storefront
+export const STORE_PHOTOS = {
+  hero: [
+    {
+      id: 1,
+      eyebrow: "Limited Sizes Left",
+      title: "Up to 40% Off Sneakers",
+      sub: "Cushioned, breathable footwear engineered for little feet and big adventures.",
+      cta: "Shop Footwear",
+      categoryFilter: "footwear",
+      image: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      id: 2,
+      eyebrow: "New Season Collection",
+      title: "Autumn Rompers & Sets",
+      sub: "100% combed organic cotton rompers made to move, crawl, and play comfortably.",
+      cta: "Shop Rompers",
+      categoryFilter: "baby-boy",
+      image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=1200&q=80",
+    },
+    {
+      id: 3,
+      eyebrow: "Just Landed",
+      title: "Little Party Dresses",
+      sub: "Exquisite blush tulle, ruffles, and twirl-worthy partywear for every celebration.",
+      cta: "Shop Dresses",
+      categoryFilter: "baby-girl",
+      image: "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=1200&q=80",
+    },
+  ],
+
+  categories: [
+    {
+      id: "new-born",
+      label: "New Born",
+      sub: "0 - 3m",
+      image: "https://images.unsplash.com/photo-1555252333-9f8e92e65df9?auto=format&fit=crop&w=300&q=80",
+      gender: "new-born",
+    },
+    {
+      id: "baby-boy",
+      label: "Baby Boy",
+      sub: "0 - 2y",
+      image: "https://images.unsplash.com/photo-1522771930-78848d9293e8?auto=format&fit=crop&w=300&q=80",
+      gender: "baby-boy",
+    },
+    {
+      id: "baby-girl",
+      label: "Baby Girl",
+      sub: "0 - 2y",
+      image: "https://images.unsplash.com/photo-1596870230751-ebdfce98ec42?auto=format&fit=crop&w=300&q=80",
+      gender: "baby-girl",
+    },
+    {
+      id: "boy",
+      label: "Boys",
+      sub: "2 - 10y",
+      image: "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=300&q=80",
+      gender: "boy",
+    },
+    {
+      id: "girl",
+      label: "Girls",
+      sub: "2 - 12y",
+      image: "https://images.unsplash.com/photo-1514090458221-65bb69cf63e6?auto=format&fit=crop&w=300&q=80",
+      gender: "girl",
+    },
+    {
+      id: "footwear",
+      label: "Footwear",
+      sub: "Sizes 19 - 29",
+      image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=300&q=80",
+      gender: "footwear",
+    },
+  ],
+
+  collections: [
+    {
+      id: "apparel",
+      title: "Cozy Cotton Apparel",
+      tagline: "Ultra-soft rompers, gallis suits, & sweatshirts",
+      category: "baby-boy",
+      image: "https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: "footwear",
+      title: "Toddler & Kids Footwear",
+      tagline: "Slip-on sneakers, rainbow boots & gripped soles",
+      category: "footwear",
+      image: "https://images.unsplash.com/photo-1514989940723-e8e51635b782?auto=format&fit=crop&w=800&q=80",
+    },
+    {
+      id: "party",
+      title: "Celebration & Occasion",
+      tagline: "Formal suits & dreamy tulle dresses",
+      category: "baby-girl",
+      image: "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?auto=format&fit=crop&w=800&q=80",
+    },
+  ],
+
+  store: {
+    banner: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    fabric: "https://images.unsplash.com/photo-1528458988975-276ad63d3a0e?auto=format&fit=crop&w=800&q=80",
+    name: "LuckyOne Mall Flagship Store",
+    address: "Shop LG-35, Lower Ground Floor, LuckyOne Mall, Rashid Minhas Road, Karachi",
+    hours: "Monday - Sunday: 11:00 AM - 11:00 PM",
+    phone: "0333 4475 437",
+    email: "info@hipkids.pk",
+    whatsapp: "923334475437",
+  },
+};
+
+export const REVIEWS = [
+  {
+    id: 1,
+    name: "Kanza Fatima",
+    initials: "KF",
+    city: "Karachi",
+    rating: 5,
+    title: "Baby Girl 3pk Sleepsuits & Rompers",
+    body: "The fabric is incredibly soft and hasn't shrunk after 5 washes. Sizing was 100% spot-on. Delivered in 2 days in Karachi!",
+  },
+  {
+    id: 2,
+    name: "Waqas Akbar",
+    initials: "WA",
+    city: "Lahore",
+    rating: 5,
+    title: "Formal Waistcoat Gallis Suit",
+    body: "Purchased for our family wedding. The quality of the waistcoat and bowtie exceeded expectations. Looked even better than photos!",
+  },
+  {
+    id: 3,
+    name: "Ayesha Noor",
+    initials: "AN",
+    city: "Islamabad",
+    rating: 5,
+    title: "Pleated Sundress, Sage Green",
+    body: "Exquisite stitching and very gentle inner lining. My 3-year-old daughter loves wearing it all day without complaining.",
+  },
+  {
+    id: 4,
+    name: "Bilal Sheikh",
+    initials: "BS",
+    city: "Rawalpindi",
+    rating: 5,
+    title: "C&J Boy Grey Slip-On Sneakers",
+    body: "Great rubber grip for a toddler who is learning to run. Very lightweight and flexible. Highly recommended!",
+  },
+];
