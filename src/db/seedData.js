@@ -1,0 +1,54 @@
+export const categories = [
+  { name: "New Born", slug: "new-born", type: "age", ageRange: "0-3 Months", sortOrder: 1 },
+  { name: "Baby Boy", slug: "baby-boy", type: "age", ageRange: "0-2 Years", sortOrder: 2 },
+  { name: "Baby Girl", slug: "baby-girl", type: "age", ageRange: "0-2 Years", sortOrder: 3 },
+  { name: "Boy", slug: "boy", type: "age", ageRange: "2-10 Years", sortOrder: 4 },
+  { name: "Girl", slug: "girl", type: "age", ageRange: "2-12 Years", sortOrder: 5 },
+  { name: "Footwear", slug: "footwear", type: "type", ageRange: null, sortOrder: 6 },
+  { name: "Accessories", slug: "accessories", type: "type", ageRange: null, sortOrder: 7 },
+  { name: "Sale", slug: "sale", type: "type", ageRange: null, sortOrder: 8 },
+];
+
+export const promos = [
+  { title: "40% off sneakers", subtitle: "Limited sizes left", discountText: "-40%", ctaText: "Shop now", isActive: 1, sortOrder: 1 },
+  { title: "Autumn rompers", subtitle: "Soft cotton, made to move", discountText: null, ctaText: "Shop now", isActive: 1, sortOrder: 2 },
+  { title: "Party dresses", subtitle: "For every little occasion", discountText: null, ctaText: "Shop now", isActive: 1, sortOrder: 3 },
+];
+
+export const products = [
+  { title: "Chicco Full Romper, Vehicles Print", slug: "chicco-full-romper-vehicles-print", category: "baby-boy", gender: "baby-boy", price: 1790, originalPrice: null, discountPercent: 0, images: ["/images/products/chicco-romper-vehicles-1.jpg", "/images/products/chicco-romper-vehicles-2.jpg"], sizes: ["0-3m", "3-6m", "6-12m", "1-2y"], stock: 24, rating: 4.6, isNewArrival: 1, isFeatured: 0 },
+  { title: "Chicco Full Romper, Lion Face Print", slug: "chicco-full-romper-lion-face-print", category: "baby-boy", gender: "baby-boy", price: 1790, originalPrice: null, discountPercent: 0, images: ["/images/products/chicco-romper-lion-1.jpg", "/images/products/chicco-romper-lion-2.jpg"], sizes: ["0-3m", "3-6m", "6-12m", "1-2y"], stock: 18, rating: 4.7, isNewArrival: 1, isFeatured: 0 },
+  { title: "Tulle Party Dress, Blush Pink", slug: "tulle-party-dress-blush-pink", category: "baby-girl", gender: "baby-girl", price: 3290, originalPrice: 4990, discountPercent: 34, images: ["/images/products/tulle-dress-blush-1.jpg", "/images/products/tulle-dress-blush-2.jpg"], sizes: ["6-12m", "1-2y", "2-3y"], stock: 12, rating: 4.8, isNewArrival: 0, isFeatured: 1 },
+  { title: "Ruffle Sleeve Cotton Romper", slug: "ruffle-sleeve-cotton-romper", category: "baby-girl", gender: "baby-girl", price: 2190, originalPrice: null, discountPercent: 0, images: ["/images/products/ruffle-romper-1.jpg"], sizes: ["0-3m", "3-6m", "6-12m"], stock: 20, rating: 4.5, isNewArrival: 1, isFeatured: 0 },
+  { title: "Formal Waistcoat Gallis Suit", slug: "formal-waistcoat-gallis-suit", category: "boy", gender: "boy", price: 4590, originalPrice: 6990, discountPercent: 34, images: ["/images/products/gallis-suit-1.jpg", "/images/products/gallis-suit-2.jpg"], sizes: ["2-3y", "4-5y", "6-7y"], stock: 9, rating: 4.9, isNewArrival: 0, isFeatured: 1 },
+  { title: "Striped Henley Sweatshirt", slug: "striped-henley-sweatshirt", category: "boy", gender: "boy", price: 1990, originalPrice: null, discountPercent: 0, images: ["/images/products/henley-sweatshirt-1.jpg"], sizes: ["2-3y", "4-5y", "6-7y", "8-9y"], stock: 30, rating: 4.4, isNewArrival: 1, isFeatured: 0 },
+  { title: "Pleated Sundress, Sage Green", slug: "pleated-sundress-sage-green", category: "girl", gender: "girl", price: 2890, originalPrice: 3990, discountPercent: 28, images: ["/images/products/sundress-sage-1.jpg"], sizes: ["2-3y", "4-5y", "6-7y"], stock: 15, rating: 4.7, isNewArrival: 0, isFeatured: 1 },
+  { title: "Floral Print Cotton Frock", slug: "floral-print-cotton-frock", category: "girl", gender: "girl", price: 2390, originalPrice: null, discountPercent: 0, images: ["/images/products/floral-frock-1.jpg"], sizes: ["2-3y", "4-5y", "6-7y", "8-9y"], stock: 22, rating: 4.6, isNewArrival: 1, isFeatured: 0 },
+  { title: "CT Baby Girl Brown Rainbow Boots", slug: "ct-baby-girl-brown-rainbow-boots", category: "footwear", gender: "baby-girl", price: 2994, originalPrice: 4990, discountPercent: 40, images: ["/images/products/ct-rainbow-boots-1.jpg", "/images/products/ct-rainbow-boots-2.jpg"], sizes: ["19", "20", "21", "22"], stock: 11, rating: 4.7, isNewArrival: 0, isFeatured: 1 },
+  { title: "All In Motion Peach Slip-On Sneakers", slug: "all-in-motion-peach-slip-on-sneakers", category: "footwear", gender: "girl", price: 3594, originalPrice: 5990, discountPercent: 40, images: ["/images/products/aim-peach-sneakers-1.jpg", "/images/products/aim-peach-sneakers-2.jpg"], sizes: ["24", "25", "26", "27"], stock: 14, rating: 4.5, isNewArrival: 0, isFeatured: 1 },
+  { title: "C&J Girl Pink Belt Slip-On Sneakers", slug: "cj-girl-pink-belt-slip-on-sneakers", category: "footwear", gender: "girl", price: 2994, originalPrice: 4990, discountPercent: 40, images: ["/images/products/cj-pink-sneakers-1.jpg", "/images/products/cj-pink-sneakers-2.jpg"], sizes: ["25", "26", "27", "28"], stock: 17, rating: 4.6, isNewArrival: 0, isFeatured: 1 },
+  { title: "C&J Boy Grey Slip-On Sneakers", slug: "cj-boy-grey-slip-on-sneakers", category: "footwear", gender: "boy", price: 2994, originalPrice: 4990, discountPercent: 40, images: ["/images/products/cj-grey-sneakers-1.jpg", "/images/products/cj-grey-sneakers-2.jpg"], sizes: ["26", "27", "28", "29"], stock: 13, rating: 4.5, isNewArrival: 0, isFeatured: 1 },
+];
+
+export function seedDatabase(rawDb) {
+  const insertCategory = rawDb.prepare(
+    `INSERT INTO categories (name, slug, type, ageRange, sortOrder)
+     VALUES (@name, @slug, @type, @ageRange, @sortOrder)`
+  );
+  const insertPromo = rawDb.prepare(
+    `INSERT INTO promos (title, subtitle, discountText, ctaText, isActive, sortOrder)
+     VALUES (@title, @subtitle, @discountText, @ctaText, @isActive, @sortOrder)`
+  );
+  const insertProduct = rawDb.prepare(
+    `INSERT INTO products
+      (title, slug, category, gender, price, originalPrice, discountPercent, images, sizes, stock, rating, isNewArrival, isFeatured)
+     VALUES
+      (@title, @slug, @category, @gender, @price, @originalPrice, @discountPercent, @images, @sizes, @stock, @rating, @isNewArrival, @isFeatured)`
+  );
+
+  for (const c of categories) insertCategory.run(c);
+  for (const p of promos) insertPromo.run(p);
+  for (const p of products) {
+    insertProduct.run({ ...p, images: JSON.stringify(p.images), sizes: JSON.stringify(p.sizes) });
+  }
+}
