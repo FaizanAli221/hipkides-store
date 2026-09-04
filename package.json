@@ -1,5 +1,5 @@
 {
-  "name": "hipkids-backend",
+  "name": "hipkids-store",
   "version": "1.0.0",
   "description": "Lightweight REST API for a kids' clothing and footwear storefront",
   "type": "module",
