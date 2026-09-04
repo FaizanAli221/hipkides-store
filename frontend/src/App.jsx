@@ -790,6 +790,8 @@ function ShopPage({
     { id: "boy", label: "Boys" },
     { id: "girl", label: "Girls" },
     { id: "footwear", label: "Footwear" },
+    { id: "accessories", label: "Accessories" },
+    { id: "sale", label: "Sale & Offers" },
   ];
 
   const filtered = useMemo(() => {
@@ -797,9 +799,13 @@ function ShopPage({
 
     // Category filter
     if (selectedCategory && selectedCategory !== "all") {
-      list = list.filter(
-        (p) => p.category === selectedCategory || p.gender === selectedCategory
-      );
+      if (selectedCategory === "sale") {
+        list = list.filter((p) => (p.discountPercent && p.discountPercent > 0) || (p.originalPrice && p.originalPrice > p.price));
+      } else {
+        list = list.filter(
+          (p) => p.category === selectedCategory || p.gender === selectedCategory
+        );
+      }
     }
 
     // Search query filter
@@ -2039,11 +2045,12 @@ function Footer({ onNavigate, onSelectCategory }) {
         <div className="space-y-3">
           <h4 className="text-sm font-bold uppercase tracking-wider text-slate-200">Shop Categories</h4>
           <ul className="space-y-2 text-xs text-slate-400">
-            {["New Born", "Baby Boy", "Baby Girl", "Boys", "Girls", "Footwear"].map((cat) => (
+            {["New Born", "Baby Boy", "Baby Girl", "Boys", "Girls", "Footwear", "Accessories", "Sale"].map((cat) => (
               <li key={cat}>
                 <button
                   onClick={() => {
-                    onSelectCategory(cat.toLowerCase().replace(" ", "-"));
+                    const slug = cat === "Boys" ? "boy" : cat === "Girls" ? "girl" : cat.toLowerCase().replace(" ", "-");
+                    onSelectCategory(slug);
                     onNavigate("shop");
                   }}
                   className="hover:text-teal-400 transition-colors"

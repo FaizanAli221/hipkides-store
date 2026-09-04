@@ -21,13 +21,13 @@ try {
   // Ignore in environments where WAL is restricted
 }
 
-// Auto-initialize schema & seed data if tables do not exist (e.g. on Vercel /tmp)
+// Auto-initialize schema & seed data if tables do not exist or catalog needs update
 try {
-  const tableCheck = rawDb.prepare("SELECT count(*) as count FROM sqlite_master WHERE type='table' AND name='products'").get();
-  if (!tableCheck || tableCheck.count === 0) {
-    const schemaPath = path.join(__dirname, "../db/schema.sql");
-    if (fs.existsSync(schemaPath)) {
-      rawDb.exec(fs.readFileSync(schemaPath, "utf-8"));
+  const schemaPath = path.join(__dirname, "../db/schema.sql");
+  if (fs.existsSync(schemaPath)) {
+    rawDb.exec(fs.readFileSync(schemaPath, "utf-8"));
+    const countRow = rawDb.prepare("SELECT count(*) as count FROM products").get();
+    if (!countRow || countRow.count < 30) {
       seedDatabase(rawDb);
     }
   }

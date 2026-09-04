@@ -73,6 +73,13 @@ export const STORE_PHOTOS = {
       image: "https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&w=300&q=80",
       gender: "footwear",
     },
+    {
+      id: "accessories",
+      label: "Accessories",
+      sub: "Caps, Bibs & More",
+      image: "https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=300&q=80",
+      gender: "accessories",
+    },
   ],
 
   collections: [
