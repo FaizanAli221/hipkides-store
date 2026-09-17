@@ -7,6 +7,10 @@ import {
 } from "lucide-react";
 import api from "./api/client";
 import { STORE_PHOTOS, REVIEWS } from "./data/storeData";
+import { products as SEED_PRODUCTS, promos as SEED_PROMOS } from "../../src/db/seedData.js";
+
+const FALLBACK_PRODUCTS = SEED_PRODUCTS.map((p, idx) => ({ id: idx + 1, ...p }));
+const FALLBACK_PROMOS = SEED_PROMOS.map((p, idx) => ({ id: idx + 1, ...p }));
 
 /* ------------------------------------------------------------------ */
 /* Design Tokens & Helpers                                            */
@@ -1930,11 +1934,17 @@ function SearchModal({ open, onClose, onViewProduct }) {
       setLoading(true);
       try {
         const res = await api.getProducts({ search: query.trim(), limit: 8 });
-        if (res.success && res.data) {
+        if (res && res.success && Array.isArray(res.data) && res.data.length > 0) {
           setResults(res.data);
+        } else {
+          const q = query.trim().toLowerCase();
+          const local = FALLBACK_PRODUCTS.filter((p) => p.title.toLowerCase().includes(q) || (p.category && p.category.toLowerCase().includes(q))).slice(0, 8);
+          setResults(local);
         }
       } catch (err) {
-        console.error("Search failed:", err);
+        const q = query.trim().toLowerCase();
+        const local = FALLBACK_PRODUCTS.filter((p) => p.title.toLowerCase().includes(q) || (p.category && p.category.toLowerCase().includes(q))).slice(0, 8);
+        setResults(local);
       } finally {
         setLoading(false);
       }
@@ -2120,9 +2130,9 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState("home");
   const [selectedCategory, setSelectedCategory] = useState("all");
 
-  const [products, setProducts] = useState([]);
-  const [promos, setPromos] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [products, setProducts] = useState(FALLBACK_PRODUCTS);
+  const [promos, setPromos] = useState(FALLBACK_PROMOS);
+  const [loading, setLoading] = useState(false);
 
   const [cart, setCart] = useState([]);
   const [wishlist, setWishlist] = useState([]);
@@ -2142,7 +2152,7 @@ export default function App() {
     setTimeout(() => setToastMsg(""), 3000);
   };
 
-  // Load Data
+  // Load Data from API if available
   useEffect(() => {
     async function loadData() {
       try {
@@ -2150,14 +2160,14 @@ export default function App() {
           api.getProducts({ limit: 50 }),
           api.getPromos(),
         ]);
-        if (prodRes.status === "fulfilled" && prodRes.value.success) {
+        if (prodRes.status === "fulfilled" && prodRes.value && prodRes.value.success && Array.isArray(prodRes.value.data) && prodRes.value.data.length > 0) {
           setProducts(prodRes.value.data);
         }
-        if (promoRes.status === "fulfilled" && promoRes.value.success) {
+        if (promoRes.status === "fulfilled" && promoRes.value && promoRes.value.success && Array.isArray(promoRes.value.data) && promoRes.value.data.length > 0) {
           setPromos(promoRes.value.data);
         }
       } catch (err) {
-        console.error("Initial load failed:", err);
+        console.warn("Using offline fallback catalog:", err);
       } finally {
         setLoading(false);
       }
