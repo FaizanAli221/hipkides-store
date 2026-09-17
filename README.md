@@ -1,19 +1,19 @@
-# HipKids API
+# SnapKids API
 
-A lightweight, modular Express + SQLite (Prisma) backend for a kids' clothing
+A lightweight, modular Express + SQLite backend for a kids' clothing
 and footwear storefront.
 
 ## Stack
 
 - Node.js (ES Modules) + Express
-- SQLite via Prisma ORM
+- SQLite via node:sqlite
 - Zod for request validation
 - helmet, cors, morgan for basic production hygiene
 
 ## Project layout
 
 ```
-hipkids-backend/
+snapkids/
 ├── prisma/
 │   ├── schema.prisma      # data model
 │   └── seed.js            # dummy kids' apparel/footwear data

@@ -1,4 +1,4 @@
-// Curated brand assets and photos for HipKids Storefront
+// Curated brand assets and photos for SnapKids Storefront
 export const STORE_PHOTOS = {
   hero: [
     {
@@ -113,7 +113,7 @@ export const STORE_PHOTOS = {
     address: "Shop LG-35, Lower Ground Floor, LuckyOne Mall, Rashid Minhas Road, Karachi",
     hours: "Monday - Sunday: 11:00 AM - 11:00 PM",
     phone: "0333 4475 437",
-    email: "info@hipkids.pk",
+    email: "info@snapkids.pk",
     whatsapp: "923334475437",
   },
 };

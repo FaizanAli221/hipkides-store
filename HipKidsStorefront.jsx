@@ -286,7 +286,7 @@ function MobileDrawer({ open, onClose }) {
         <div className="border-t px-4 py-4 text-xs" style={{ borderColor: "#EFEEE9", color: "#6B6A64" }}>
           <p className="font-semibold mb-1" style={{ color: INK }}>Need help?</p>
           <p className="flex items-center gap-2 mb-1"><Phone size={13} /> 0333 4475 437</p>
-          <p className="flex items-center gap-2"><Mail size={13} /> info@hipkids.pk</p>
+          <p className="flex items-center gap-2"><Mail size={13} /> info@snapkids.pk</p>
         </div>
       </div>
     </div>
@@ -739,7 +739,7 @@ function Footer() {
           <p className="text-sm text-white/85 leading-relaxed">
             Shop LG-35, Lower Ground,<br />LuckyOne Mall, Karachi
           </p>
-          <p className="text-sm text-white/85 flex items-center gap-2 mt-3"><Mail size={14} /> info@hipkids.pk</p>
+          <p className="text-sm text-white/85 flex items-center gap-2 mt-3"><Mail size={14} /> info@snapkids.pk</p>
           <p className="text-sm text-white/85 flex items-center gap-2 mt-1"><Phone size={14} /> 0333 4475 437</p>
           <div className="flex items-center gap-3 mt-4">
             <Facebook size={17} />
@@ -795,7 +795,7 @@ function Footer() {
       </div>
 
       <div className="max-w-6xl mx-auto px-4 mt-10 pt-6 border-t border-white/20 text-xs text-white/70">
-        Copyright 2026 HipKids. All rights reserved.
+        Copyright 2026 SnapKids. All rights reserved.
       </div>
     </footer>
   );

@@ -7,7 +7,7 @@ import { seedDatabase } from "../db/seedData.js";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const isServerless = process.env.VERCEL === "1" || !!process.env.AWS_LAMBDA_FUNCTION_NAME;
-const dbFile = process.env.DATABASE_FILE || (isServerless ? "/tmp/hipkids.db" : path.join(__dirname, "../../data/hipkids.db"));
+const dbFile = process.env.DATABASE_FILE || (isServerless ? "/tmp/snapkids.db" : path.join(__dirname, "../../data/snapkids.db"));
 
 fs.mkdirSync(path.dirname(dbFile), { recursive: true });
 

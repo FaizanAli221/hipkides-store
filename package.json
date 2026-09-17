@@ -1,5 +1,5 @@
 {
-  "name": "hipkids-store",
+  "name": "snapkids-store",
   "version": "1.0.0",
   "description": "Lightweight REST API for a kids' clothing and footwear storefront",
   "type": "module",

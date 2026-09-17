@@ -4,5 +4,5 @@ import app from "./app.js";
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-  console.log(`HipKids API running on http://localhost:${PORT}`);
+  console.log(`SnapKids API running on http://localhost:${PORT}`);
 });

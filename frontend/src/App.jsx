@@ -20,7 +20,7 @@ const GOLD = "#F59E0B";
 
 const formatPKR = (n) => `Rs. ${Number(n || 0).toLocaleString("en-PK")}`;
 
-function ProductImage({ src, alt, className = "", fallbackText = "HipKids" }) {
+function ProductImage({ src, alt, className = "", fallbackText = "SnapKids" }) {
   const [error, setError] = useState(false);
   const [loaded, setLoaded] = useState(false);
 
@@ -32,9 +32,8 @@ function ProductImage({ src, alt, className = "", fallbackText = "HipKids" }) {
         </div>
       )}
       {error || !src ? (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-teal-50 text-teal-800 p-2 text-center select-none">
-          <Sparkles size={20} className="mb-1 text-teal-600" />
-          <span className="text-xs font-bold leading-tight line-clamp-2">{fallbackText}</span>
+        <div className="absolute inset-0 bg-teal-50 flex items-center justify-center text-xs font-bold text-teal-600/70 p-2 text-center">
+          {fallbackText}
         </div>
       ) : (
         <img
@@ -42,8 +41,7 @@ function ProductImage({ src, alt, className = "", fallbackText = "HipKids" }) {
           alt={alt}
           onLoad={() => setLoaded(true)}
           onError={() => setError(true)}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"}`}
-          loading="lazy"
+          className={`transition-opacity duration-300 ${loaded ? "opacity-100" : "opacity-0"} ${className}`}
         />
       )}
     </div>
@@ -93,7 +91,7 @@ function Header({
       <div className="bg-slate-900 text-white text-xs font-medium py-2 px-4 text-center select-none flex items-center justify-center gap-2">
         <Sparkles size={13} className="text-teal-400 shrink-0" />
         <span>
-          Free express delivery across Pakistan on orders above <strong>Rs. 3,500</strong> • Use code <strong className="text-amber-300">HIP10</strong> for 10% off!
+          Free express delivery across Pakistan on orders above <strong>Rs. 3,500</strong> • Use code <strong className="text-amber-300">SNAP10</strong> for 10% off!
         </span>
       </div>
 
@@ -118,12 +116,12 @@ function Header({
               style={{ backgroundColor: TEAL_TINT }}
             >
               <span className="text-xl font-extrabold text-teal-700" style={{ fontFamily: "'Baloo 2', sans-serif" }}>
-                H
+                S
               </span>
             </div>
             <div>
               <span className="text-2xl font-bold tracking-tight text-slate-900 block leading-none" style={{ fontFamily: "'Baloo 2', sans-serif" }}>
-                Hip<span style={{ color: TEAL }}>Kids</span>
+                Snap<span style={{ color: TEAL }}>Kids</span>
               </span>
               <span className="text-[10px] tracking-wider uppercase font-semibold text-slate-400 block mt-0.5">
                 Premium Store
@@ -212,7 +210,7 @@ function MobileDrawer({ open, onClose, currentPage, onNavigate }) {
   const links = [
     { id: "home", label: "Home", icon: Home },
     { id: "shop", label: "Shop All Collections", icon: ShoppingBag },
-    { id: "about", label: "About HipKids", icon: Info },
+    { id: "about", label: "About SnapKids", icon: Info },
     { id: "contact", label: "Contact & Store Location", icon: MapPin },
     { id: "track", label: "Track Your Order", icon: PackageCheck },
   ];
@@ -224,7 +222,7 @@ function MobileDrawer({ open, onClose, currentPage, onNavigate }) {
         <div>
           <div className="flex items-center justify-between pb-5 border-b border-slate-100">
             <span className="text-xl font-bold text-slate-900" style={{ fontFamily: "'Baloo 2', sans-serif" }}>
-              Hip<span style={{ color: TEAL }}>Kids</span>
+              Snap<span style={{ color: TEAL }}>Kids</span>
             </span>
             <button onClick={onClose} className="p-1 rounded-lg hover:bg-slate-100 text-slate-500">
               <X size={20} />
@@ -234,7 +232,6 @@ function MobileDrawer({ open, onClose, currentPage, onNavigate }) {
           <div className="py-4 space-y-1">
             {links.map((link) => {
               const Icon = link.icon;
-              const active = currentPage === link.id;
               return (
                 <button
                   key={link.id}
@@ -242,11 +239,9 @@ function MobileDrawer({ open, onClose, currentPage, onNavigate }) {
                     onNavigate(link.id);
                     onClose();
                   }}
-                  className={`w-full flex items-center gap-3 px-3.5 py-3 rounded-xl text-sm font-semibold transition-colors ${
-                    active ? "bg-teal-50 text-teal-700" : "text-slate-700 hover:bg-slate-50"
-                  }`}
+                  className="w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
                 >
-                  <Icon size={18} className={active ? "text-teal-600" : "text-slate-400"} />
+                  <Icon size={18} className="text-teal-600" />
                   <span>{link.label}</span>
                 </button>
               );
@@ -257,7 +252,7 @@ function MobileDrawer({ open, onClose, currentPage, onNavigate }) {
         <div className="pt-4 border-t border-slate-100 text-xs text-slate-500 space-y-1">
           <p className="font-bold text-slate-900">LuckyOne Mall, Karachi</p>
           <p>Helpline: 0333 4475 437</p>
-          <p>Email: info@hipkids.pk</p>
+          <p>Email: info@snapkids.pk</p>
         </div>
       </div>
     </div>
@@ -938,14 +933,14 @@ function AboutPage({ onNavigate }) {
           Dedicated to dressing little dreams with love & comfort
         </h1>
         <p className="text-sm sm:text-base text-slate-600 mt-3 leading-relaxed">
-          HipKids was founded with a single mission: to bring 100% authentic, high-quality, and hypoallergenic kids apparel and footwear to families across Pakistan.
+          SnapKids was founded with a single mission: to bring 100% authentic, high-quality, and hypoallergenic kids apparel and footwear to families across Pakistan.
         </p>
       </div>
 
       <div className="rounded-3xl overflow-hidden shadow-xl aspect-video max-h-[420px] w-full">
         <img
           src={STORE_PHOTOS.store.banner}
-          alt="HipKids Storefront"
+          alt="SnapKids Storefront"
           className="w-full h-full object-cover"
         />
       </div>
@@ -1130,7 +1125,7 @@ function ContactPage() {
               </p>
               <p className="flex items-center gap-3">
                 <Mail size={18} className="text-teal-400 shrink-0" />
-                <span>info@hipkids.pk</span>
+                <span>info@snapkids.pk</span>
               </p>
             </div>
 
@@ -1588,8 +1583,8 @@ function CartDrawer({
   const handleCouponSubmit = (e) => {
     e.preventDefault();
     const clean = couponInput.trim().toUpperCase();
-    if (clean === "HIP10") {
-      onApplyCoupon("HIP10", 0.10);
+    if (clean === "SNAP10" || clean === "HIP10") {
+      onApplyCoupon("SNAP10", 0.10);
       setCouponMsg("10% discount applied!");
     } else if (clean === "FREESHIP") {
       onApplyCoupon("FREESHIP", 0);
@@ -2025,10 +2020,10 @@ function Footer({ onNavigate, onSelectCategory }) {
         <div className="space-y-3">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-xl bg-teal-500/20 text-teal-400 font-bold flex items-center justify-center text-lg">
-              H
+              S
             </div>
             <span className="text-2xl font-bold tracking-tight" style={{ fontFamily: "'Baloo 2', sans-serif" }}>
-              Hip<span style={{ color: TEAL }}>Kids</span>
+              Snap<span style={{ color: TEAL }}>Kids</span>
             </span>
           </div>
           <p className="text-xs text-slate-400 leading-relaxed">
@@ -2037,7 +2032,7 @@ function Footer({ onNavigate, onSelectCategory }) {
           <div className="text-xs text-slate-400 space-y-1 pt-2">
             <p className="flex items-center gap-2"><MapPin size={14} className="text-teal-400" /> LuckyOne Mall, Karachi</p>
             <p className="flex items-center gap-2"><Phone size={14} className="text-teal-400" /> 0333 4475 437</p>
-            <p className="flex items-center gap-2"><Mail size={14} className="text-teal-400" /> info@hipkids.pk</p>
+            <p className="flex items-center gap-2"><Mail size={14} className="text-teal-400" /> info@snapkids.pk</p>
           </div>
         </div>
 
@@ -2080,7 +2075,7 @@ function Footer({ onNavigate, onSelectCategory }) {
           <p className="text-xs text-slate-400">Get 10% off your first order plus new arrivals alerts.</p>
           {subscribed ? (
             <div className="p-3 bg-teal-900/40 text-teal-300 rounded-xl text-xs flex items-center gap-2">
-              <Check size={16} /> Subscribed! Welcome to HipKids.
+              <Check size={16} /> Subscribed! Welcome to SnapKids.
             </div>
           ) : (
             <form onSubmit={handleSubscribe} className="flex gap-1.5">
@@ -2112,7 +2107,7 @@ function Footer({ onNavigate, onSelectCategory }) {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 mt-12 pt-6 border-t border-slate-900 text-center text-xs text-slate-500">
-        © 2026 HipKids Pakistan. All Rights Reserved. Designed for premium comfort.
+        © 2026 SnapKids Pakistan. All Rights Reserved. Designed for premium comfort.
       </div>
     </footer>
   );
