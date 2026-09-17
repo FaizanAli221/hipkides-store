@@ -7,10 +7,7 @@ import {
 } from "lucide-react";
 import api from "./api/client";
 import { STORE_PHOTOS, REVIEWS } from "./data/storeData";
-import { products as SEED_PRODUCTS, promos as SEED_PROMOS } from "../../src/db/seedData.js";
-
-const FALLBACK_PRODUCTS = SEED_PRODUCTS.map((p, idx) => ({ id: idx + 1, ...p }));
-const FALLBACK_PROMOS = SEED_PROMOS.map((p, idx) => ({ id: idx + 1, ...p }));
+import { FALLBACK_PRODUCTS, FALLBACK_PROMOS } from "./data/seedProducts";
 
 /* ------------------------------------------------------------------ */
 /* Design Tokens & Helpers                                            */
