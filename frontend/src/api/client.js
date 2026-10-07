@@ -1,4 +1,4 @@
-// API Client for SnapKids backend
+// API Client for HipKids backend
 const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 async function request(endpoint, options = {}) {

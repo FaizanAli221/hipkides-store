@@ -1,4 +1,4 @@
-# SnapKids API
+# HipKids API
 
 A lightweight, modular Express + SQLite backend for a kids' clothing
 and footwear storefront.
@@ -13,7 +13,7 @@ and footwear storefront.
 ## Project layout
 
 ```
-snapkids/
+hipkids/
 ├── prisma/
 │   ├── schema.prisma      # data model
 │   └── seed.js            # dummy kids' apparel/footwear data
